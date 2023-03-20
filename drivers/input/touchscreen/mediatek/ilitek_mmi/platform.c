@@ -1563,8 +1563,8 @@ err_register_charger_notify_failed:
 	if (ipd->charger_detection) {
 		if (ipd->charger_detection->ilitek_charger_notif.notifier_call)
 			power_supply_unreg_notifier(&ipd->charger_detection->ilitek_charger_notif);
-			destroy_workqueue(ipd->charger_detection->ilitek_charger_notify_wq);
-			ipd->charger_detection->ilitek_charger_notify_wq = NULL;
+		destroy_workqueue(ipd->charger_detection->ilitek_charger_notify_wq);
+		ipd->charger_detection->ilitek_charger_notify_wq = NULL;
 	}
 err_charger_notify_wq_failed:
 err_charger_detection_alloc_failed:
